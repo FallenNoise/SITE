@@ -1,10 +1,12 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from django.http import HttpResponse
+
+
+def home_view(request):
+    return HttpResponse("<h1> Главная страница </h1>")
+
 
 urlpatterns = [
-    # Исправленная строка для админки:
-    path('admin/', admin.site.urls),
-
-    # Подключение маршрутов вашего приложения из папки apps:
-    path('blog/', include('blog.urls')),
+    # Только одна строка для главной страницы!
+    path('', home_view, name='home'),
 ]
