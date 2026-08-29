@@ -1,5 +1,7 @@
 from django.urls import path
 from django.http import HttpResponse
+# Импортируем файл views из текущей папки
+from . import views
 
 
 def home_view(request):
@@ -7,6 +9,6 @@ def home_view(request):
 
 
 urlpatterns = [
-    # Только одна строка для главной страницы!
-    path('', home_view, name='home'),
+    # Указываем путь к функции через views.имя_функции
+    path('', views.home_view, name='home'),
 ]
