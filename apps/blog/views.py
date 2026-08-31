@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
 
-# Переносим функцию сюда
-
 
 def home_view(request):
     return HttpResponse("Главная страница из файла views.py")
